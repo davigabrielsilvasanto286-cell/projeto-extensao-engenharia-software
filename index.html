@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprenda Informática Básica</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #0066cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #0066cc;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #0066cc;
+      color: white;
+      margin-top: 30px;
+    }
+    button {
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover:enabled {
+      background-color: #004a99;
+    }
+    button:disabled {
+      background-color: gray;
+      cursor: not-allowed;
+    }
+    input {
+      padding: 5px;
+      width: 100%;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📘 Aprenda Informática Básica</h1>
+  </header>
+
+  <section>
+    <h2>📂 O que é Informática?</h2>
+    <p>A informática é o estudo e uso de máquinas,computadores e tecnologias para resolver problemas e facilitar o dia a dia.</p>
+    <p>Os computadores tem Hardware que é a parte fisíca como as peças e dispositivos, já o Software é a parte digital como apps e sites.</p>
+    <p>Um outro exemplo de Software, são os Sistemas Operacionais, como por exemplo: Windows,Mac,linux e até o próprio android usado na maioria dos celulares.</p>
+    <p>Computadores tem dois tipos de dispositivos, entradas onde são enivados informações ou comandos como por exemplo: teclado e microfone e saídas onde é mostrado o que foi pedido como: fones de ouvido e monitores.</p>
+
+    <h2>💻 Missão 1: O que é um computador?</h2>
+    <p>Digite sua resposta abaixo:</p>
+    <input type="text" id="resposta1" placeholder="Escreva aqui...">
+    <button onclick="verificarResposta()">Enviar</button>
+    <p id="feedback"></p>
+
+    <h2>💻 Missão 2: Qual destas é uma entrada de computador?</h2>
+    <button onclick="verificarQuiz('mouse')">🖱️ Mouse</button>
+    <button onclick="verificarQuiz('monitor')">🖥️ Monitor</button>
+    <button onclick="verificarQuiz('caixa de som')">🔊 Caixa de som</button>
+    <p id="resultadoQuiz"></p>
+
+    <button id="botaoConcluir" disabled onclick="alert('Parabéns! Você concluiu sua lição 🎉')">Concluir Lição</button>
+  </section>
+
+  <script>
+    let missao1Completa = false;
+    let missao2Completa = false;
+
+    function verificarResposta() {
+      const resposta = document.getElementById('resposta1').value.toLowerCase();
+      const feedback = document.getElementById('feedback');
+
+      if (resposta.includes('máquina') || resposta.includes('tecnologia') || resposta.includes('maquina')) {
+        feedback.innerHTML = "✅ Muito bem! Você acertou 🎉";
+        feedback.style.color = "green";
+        missao1Completa = true;
+        verificarProgresso();
+      } else {
+        feedback.innerHTML = "❌ Tente novamente! Pense no que um celular tem em comum com um pc.";
+        feedback.style.color = "red";
+      }
+    }
+
+    function verificarQuiz(resposta) {
+      const resultado = document.getElementById('resultadoQuiz');
+      if (resposta === 'mouse') {
+        resultado.innerHTML = "✅ Correto! O mouse é um dispositivo de entrada.";
+        resultado.style.color = "green";
+        missao2Completa = true;
+        verificarProgresso();
+      } else {
+        resultado.innerHTML = "❌ Errado! Tente novamente.";
+        resultado.style.color = "red";
+      }
+    }
+
+    function verificarProgresso() {
+      if (missao1Completa && missao2Completa) {
+        document.getElementById('botaoConcluir').disabled = false;
+      }
+    }
+  </script>
+</body>
+</html>
