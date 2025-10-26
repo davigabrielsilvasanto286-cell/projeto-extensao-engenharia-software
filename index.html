@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aprenda Informática Básica</title>
+  <title>Tecnologia na Cultura</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,7 +12,7 @@
       padding: 0;
     }
     header {
-      background-color: #0066cc;
+      background-color: #E37D46;
       color: white;
       padding: 20px;
       text-align: center;
@@ -26,17 +26,17 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     h2 {
-      color: #0066cc;
+      color: #E37D46;
     }
     footer {
       text-align: center;
       padding: 10px;
-      background-color: #0066cc;
+      background-color: #E37D46;
       color: white;
       margin-top: 30px;
     }
     button {
-      background-color: #0066cc;
+      background-color: #E37D46;
       color: white;
       border: none;
       padding: 10px 15px;
@@ -45,7 +45,7 @@
       margin-top: 10px;
     }
     button:hover:enabled {
-      background-color: #004a99;
+      background-color: #BA4B22;
     }
     button:disabled {
       background-color: gray;
@@ -62,26 +62,25 @@
 </head>
 <body>
   <header>
-    <h1>📘 Aprenda Informática Básica</h1>
+    <h1>📸 Tecnologia na Cultura</h1>
   </header>
 
   <section>
-    <h2>📂 O que é Informática?</h2>
-    <p>A informática é o estudo e uso de máquinas,computadores e tecnologias para resolver problemas e facilitar o dia a dia.</p>
-    <p>Os computadores tem Hardware que é a parte fisíca como as peças e dispositivos, já o Software é a parte digital como apps e sites.</p>
-    <p>Um outro exemplo de Software, são os Sistemas Operacionais, como por exemplo: Windows,Mac,linux e até o próprio android usado na maioria dos celulares.</p>
-    <p>Computadores tem dois tipos de dispositivos, entradas onde são enivados informações ou comandos como por exemplo: teclado e microfone e saídas onde é mostrado o que foi pedido como: fones de ouvido e monitores.</p>
+    <h2>🎶 Como a tecnologia ajuda a cultura?</h2>
+    <p>A tecnologia influencia e apoia a cultura, desde a criação e o consumo de arte até a preservação de tradições e a formações de novas comunidades através do mundo.</p>
+    <p>As pessoas envolvidas em atividades culturais podem usar a informática e ferramentas digitais para divulgar seu trabalho, expandir seu alcance, criar novas obras e até conseguir dinheiro com seu trabalho.</p>
+    <p>A inclusão digital é fundamental para a preservação e difusão da cultura, pois utiliza a tecnologia para tornar acessível, registrar e revitalizar o patrimônio cultural material e imaterial.</p>
 
-    <h2>💻 Missão 1: O que é um computador?</h2>
+    <h2>🎬 Missão 1: Fale um exemplo de tecnologia com cultura:</h2>
     <p>Digite sua resposta abaixo:</p>
     <input type="text" id="resposta1" placeholder="Escreva aqui...">
     <button onclick="verificarResposta()">Enviar</button>
     <p id="feedback"></p>
 
-    <h2>💻 Missão 2: Qual desses é um periférico de entrada?</h2>
-    <button onclick="verificarQuiz('mouse')">🖱️ Mouse</button>
-    <button onclick="verificarQuiz('monitor')">🖥️ Monitor</button>
-    <button onclick="verificarQuiz('caixa de som')">🔊 Caixa de som</button>
+    <h2>🎬 Missão 2: Qual dessas tecnologias não é focada em cultura?</h2>
+    <button onclick="verificarQuiz('celular')">📱 Celular</button>
+    <button onclick="verificarQuiz('musica')">🎵 Música</button>
+    <button onclick="verificarQuiz('filme')">🎞️ Filme</button>
     <p id="resultadoQuiz"></p>
 
     <button id="botaoConcluir" disabled onclick="alert('Parabéns! Você concluiu sua lição 🎉')">Concluir Lição</button>
@@ -95,21 +94,21 @@
       const resposta = document.getElementById('resposta1').value.toLowerCase();
       const feedback = document.getElementById('feedback');
 
-      if (resposta.includes('máquina') || resposta.includes('tecnologia') || resposta.includes('maquina')) {
+      if (resposta.includes('desenho') || resposta.includes('arte') || resposta.includes('vídeo') || resposta.includes('video') || resposta.includes('música') || resposta.includes('filme') || resposta.includes('musica') || resposta.includes('jogo')) {
         feedback.innerHTML = "✅ Muito bem! Você acertou 🎉";
         feedback.style.color = "green";
         missao1Completa = true;
         verificarProgresso();
       } else {
-        feedback.innerHTML = "❌ Tente novamente! Pense no que um celular tem em comum com um pc.";
+        feedback.innerHTML = "❌ Tente novamente! Pense em coisas que usem tecnologia.";
         feedback.style.color = "red";
       }
     }
 
     function verificarQuiz(resposta) {
       const resultado = document.getElementById('resultadoQuiz');
-      if (resposta === 'mouse') {
-        resultado.innerHTML = "✅ Correto! O mouse é um dispositivo de entrada.";
+      if (resposta === 'celular') {
+        resultado.innerHTML = "✅ Correto! O celular pode ser usado de forma cultural mas o propósito é de lazer.";
         resultado.style.color = "green";
         missao2Completa = true;
         verificarProgresso();
