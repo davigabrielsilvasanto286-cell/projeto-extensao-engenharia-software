@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tecnologia na Cultura</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #E37D46;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #E37D46;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #E37D46;
+      color: white;
+      margin-top: 30px;
+    }
+    button {
+      background-color: #E37D46;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover:enabled {
+      background-color: #BA4B22;
+    }
+    button:disabled {
+      background-color: gray;
+      cursor: not-allowed;
+    }
+    input {
+      padding: 5px;
+      width: 100%;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📸 Tecnologia na Cultura</h1>
+  </header>
+
+  <section>
+    <h2>🎶 Como a tecnologia ajuda a cultura?</h2>
+    <p>A tecnologia influencia e apoia a cultura, desde a criação e o consumo de arte até a preservação de tradições e a formações de novas comunidades através do mundo.</p>
+    <p>As pessoas envolvidas em atividades culturais podem usar a informática e ferramentas digitais para divulgar seu trabalho, expandir seu alcance, criar novas obras e até conseguir dinheiro com seu trabalho.</p>
+    <p>A inclusão digital é fundamental para a preservação e difusão da cultura, pois utiliza a tecnologia para tornar acessível, registrar e revitalizar o patrimônio cultural material e imaterial.</p>
+
+    <h2>🎬 Missão 1: Fale um exemplo de tecnologia com cultura:</h2>
+    <p>Digite sua resposta abaixo:</p>
+    <input type="text" id="resposta1" placeholder="Escreva aqui...">
+    <button onclick="verificarResposta()">Enviar</button>
+    <p id="feedback"></p>
+
+    <h2>🎬 Missão 2: Qual dessas tecnologias não é focada em cultura?</h2>
+    <button onclick="verificarQuiz('celular')">📱 Celular</button>
+    <button onclick="verificarQuiz('musica')">🎵 Música</button>
+    <button onclick="verificarQuiz('filme')">🎞️ Filme</button>
+    <p id="resultadoQuiz"></p>
+
+    <button id="botaoConcluir" disabled onclick="alert('Parabéns! Você concluiu sua lição 🎉')">Concluir Lição</button>
+  </section>
+
+  <script>
+    let missao1Completa = false;
+    let missao2Completa = false;
+
+    function verificarResposta() {
+      const resposta = document.getElementById('resposta1').value.toLowerCase();
+      const feedback = document.getElementById('feedback');
+
+      if (resposta.includes('desenho') || resposta.includes('arte') || resposta.includes('vídeo') || resposta.includes('video') || resposta.includes('música') || resposta.includes('filme') || resposta.includes('musica') || resposta.includes('jogo')) {
+        feedback.innerHTML = "✅ Muito bem! Você acertou 🎉";
+        feedback.style.color = "green";
+        missao1Completa = true;
+        verificarProgresso();
+      } else {
+        feedback.innerHTML = "❌ Tente novamente! Pense em coisas que usem tecnologia.";
+        feedback.style.color = "red";
+      }
+    }
+
+    function verificarQuiz(resposta) {
+      const resultado = document.getElementById('resultadoQuiz');
+      if (resposta === 'celular') {
+        resultado.innerHTML = "✅ Correto! O celular pode ser usado de forma cultural mas o propósito é de lazer.";
+        resultado.style.color = "green";
+        missao2Completa = true;
+        verificarProgresso();
+      } else {
+        resultado.innerHTML = "❌ Errado! Tente novamente.";
+        resultado.style.color = "red";
+      }
+    }
+
+    function verificarProgresso() {
+      if (missao1Completa && missao2Completa) {
+        document.getElementById('botaoConcluir').disabled = false;
+      }
+    }
+  </script>
+</body>
+</html>
